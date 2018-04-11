@@ -24,7 +24,7 @@ var outerRadius = Math.min(width, height) / 2  - (mobileScreen ? 80 : 100),
 ////////////////////////////////////////////////////////////
 ////////////////////////// Data ////////////////////////////
 ////////////////////////////////////////////////////////////
-var Names = ["AE", "RU", "PL", "MY", "TH", "ID", "SA","", "BY", "UA", "ID", "KG", "KH", "MM", "PH",""];
+var Names = ["United Arab Emirates", "Russia", "Poland", "Malaysia", "Thailand", "Indonesia", "Saudi Arabia","", "Belarus", "Ukraine", "Indonesia", "Krygyzstan", "Cambodia", "Myanmar", "Philippines",""];
 
 var respondents = 6445, //Total number of respondents (i.e. the number that makes up the total group)
 	emptyPerc = 0.2, //What % of the circle should become empty
@@ -83,8 +83,8 @@ var g = wrapper.selectAll("g.group")
 	.data(chord.groups)
 	.enter().append("g")
 	.attr("class", "group")
-	.on("mouseover", fade(opacityLow))
-	.on("mouseout", fade(opacityDefault));
+	.on("mouseover", fade(0.25))
+	.on("mouseout", fade(1));
 
 g.append("path")
 	.style("stroke", function(d,i) { return (Names[i] === "" ? "none" : "#00A1DE"); })
@@ -112,7 +112,7 @@ g.append("text")
 		var c = arc.centroid(d);
 		return "translate(" + (c[0] + d.pullOutSize) + "," + c[1] + ")"
 		+ "rotate(" + (d.angle * 180 / Math.PI - 90) + ")"
-		+ "translate(" + 55 + ",0)"
+		+ "translate(" + 35 + ",0)"
 		+ (d.angle > Math.PI ? "rotate(180)" : "")
 	})
   .text(function(d,i) { return Names[i]; });
