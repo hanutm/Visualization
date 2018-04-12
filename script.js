@@ -24,28 +24,25 @@ var outerRadius = Math.min(width, height) / 2  - (mobileScreen ? 80 : 100),
 ////////////////////////////////////////////////////////////
 ////////////////////////// Data ////////////////////////////
 ////////////////////////////////////////////////////////////
-var Names = ["United Arab Emirates", "Russia", "Poland", "Malaysia", "Thailand", "Indonesia", "Saudi Arabia","", "Belarus", "Ukraine", "Indonesia", "Krygyzstan", "Cambodia", "Myanmar", "Philippines",""];
+var Names = ["Russia", "Thailand", "Poland", "Indonesia", "Malaysia","", "Ukraine", "Belarus",  "Krygyzstan", "Cambodia", "Myanmar", ""];  
 
-var respondents = 6445, //Total number of respondents (i.e. the number that makes up the total group)
-	emptyPerc = 0.2, //What % of the circle should become empty
-	emptyStroke = Math.round(respondents*emptyPerc); 
+var respondents = 643, //Total number of respondents (i.e. the number that makes up the total group)
+        emptyPerc = 0.2, //What % of the circle should become empty
+        emptyStroke = Math.round(respondents*emptyPerc); 
+
 var matrix = [
-	[0,0,0,0,0,0,0,0,0,785,0,0,0,0,0,0],
-	[0,0,0,0,0,0,0,0,100,1534,328,0,239,0,0,0],
-	[0,0,0,0,0,0,0,0,326,0,0,529,0,0,183,0],
-	[0,0,0,0,0,0,0,0,0,192,0,0,0,0,0,0],
-	[0,0,0,0,0,0,0,0,0,0,0,120,0,254,253,0],
-	[0,0,0,0,0,0,0,0,0,0,0,0,0,1223,0,0],
-	[0,0,0,0,0,0,0,0,0,0,0,149,0,0,0,0],
-	[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,emptyStroke],
-	[0,100,326,0,0,0,0,0,0,0,0,0,0,0,0,0],
-	[785,1534,0,192,0,0,0,0,0,0,0,0,0,0,0,0],
-	[0,328,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-	[0,0,529,0,120,0,149,0,0,0,0,0,0,0,0,0],
-	[0,239,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-	[0,0,0,0,254,1223,0,0,0,0,0,0,0,0,0,0],
-	[0,0,183,0,253,0,0,0,0,0,0,0,0,0,0,0],
-	[0,0,0,0,0,0,0,emptyStroke,0,0,0,0,0,0,0,0]
+        [0,0,0,0,0,0,379,39,44,0,0,0],
+        [0,0,0,0,0,0,0,0,0,52,58,0],
+        [0,0,0,0,0,0,42,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,29,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,emptyStroke],
+        [379,0,42,0,0,0,0,0,0,0,0,0],
+        [39,0,0,0,0,0,0,0,0,0,0,0],
+        [44,0,0,0,0,0,0,0,0,0,0,0],
+        [0,52,0,0,0,0,0,0,0,0,0,0],
+        [0,58,0,29,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,emptyStroke,0,0,0,0,0,0]
 ];
 
 //Calculate how far the Chord Diagram needs to be rotated clockwise to make the dummy
